@@ -9,7 +9,7 @@ import Quiz from './pages/Quiz';
 import Dashboard from './pages/Dashboard';
 import './App.css';
 
-const API = '/api';
+const API = import.meta.env.VITE_API_URL || '/api';
 
 const defaultState = {
   xp: 0, streak: 0, lessonsCompleted: 0, quizzesPassed: 0,
