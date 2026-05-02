@@ -12,7 +12,7 @@ services:
         value: 3000
     repoPath: server
 
-  - type: static
+  - type: static_site
     name: learnify-frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
