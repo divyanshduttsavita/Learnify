@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: learnify-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: PORT
+        value: 3000
+    repoPath: server
+
+  - type: static
+    name: learnify-frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false
+    repoPath: client
